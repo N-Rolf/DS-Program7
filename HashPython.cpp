@@ -9,7 +9,6 @@ using namespace std;
 HashPython::HashPython()
 {
     clearCounts();
-    ingest();
 }
 
 void HashPython::clearCounts()
@@ -20,7 +19,7 @@ void HashPython::clearCounts()
     }
 }
 
-void HashPython::ingest()
+void HashPython::ingest(string)
 {
     string word;
 

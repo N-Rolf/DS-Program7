@@ -18,7 +18,8 @@ enum Menu {ENTER_FILENAME=1, EXIT};
 
 int main()
 {
-    HashPython list;
+    
+    string userFile;
     //USER MENU
     int selection = 0;
     do{
@@ -29,8 +30,10 @@ int main()
         cin >> selection;
         switch(selection){
             case ENTER_FILENAME:{
-                //cout << "Enter file name: \"file.txt\"" << endl;
-                //cin << setFile(userFile);
+                cout << "Enter file name: \"file.txt\"" << endl;
+                cin >> userFile;
+                // list.ingest(userFile);
+                HashPython list;
                 break;
                 }
             case EXIT:{
