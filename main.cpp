@@ -24,7 +24,7 @@ int main()
     do{
         cout << "\nChoose an Option...\n";
         cout << "1: Enter a new file name.\n";
-        cout << "4: Exit. \n";
+        cout << "2: Exit. \n";
         cin.clear();
         cin >> selection;
         switch(selection){
@@ -38,7 +38,7 @@ int main()
                 break;
                 }
         }
-    }while(selection != 4);
+    }while(selection != 2);
    
    return 0;
 }

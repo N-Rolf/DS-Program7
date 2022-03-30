@@ -25,6 +25,6 @@ pass
 raise
 return
 try
-wile
+while
 with
 yield
