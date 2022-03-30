@@ -16,20 +16,9 @@ using namespace std;
 
 enum Menu {ENTER_FILENAME=1, EXIT};
 
-struct TempStruct
-    {
-        string element;
-        unsigned count;
-    };
-
-int ingestData();
-
 int main()
 {
-
-    //initial data ingest and user file name prompt
-    int itemCount = ingestData();
-   
+    HashPython list;
     //USER MENU
     int selection = 0;
     do{
@@ -40,7 +29,8 @@ int main()
         cin >> selection;
         switch(selection){
             case ENTER_FILENAME:{
-                //user prompt here
+                //cout << "Enter file name: \"file.txt\"" << endl;
+                //cin << setFile(userFile);
                 break;
                 }
             case EXIT:{
@@ -51,47 +41,4 @@ int main()
     }while(selection != 4);
    
    return 0;
-}
-
-/********************************************************************
-*** FUNCTION ingestData                                           ***
-*********************************************************************
-*** DESCRIPTION : displays all nodes in the stack                 ***
-*** INPUT ARGS : none                                             ***
-*** OUTPUT ARGS : none                                            ***
-*** RETURN : number of items pushed to stack                      ***
-********************************************************************/
-int ingestData()
-{
-   string userFile = "keywords.txt";
-
-    //check for file
-    ifstream infile;
-    infile.open(userFile);
-        if(!infile)
-        {
-            cout << "Error opening file." << endl;
-            exit(102);
-        }
-    
-    //read from file to temporary node, push from temp to stack
-    Node tempNode;
-    int count = 0;
-
-    while(infile >> tempNode.likes)
-    {
-      //infile >> tempNode.likes;
-      infile >> tempNode.views;
-      infile.ignore();
-      getline(infile, tempNode.title);
-
-      //cout << "inserting: " << tempNode.title << ", " << tempNode.likes << ", " << tempNode.views << endl;
-      tree.insertNode(tempNode.title, tempNode.likes, tempNode.views);     
-      count ++;
-      //cout << "eof status: " << infile.eof() << endl;
-    }
-
-   //cout << "\n" << count << "/10 items inserted." << endl;
-   infile.close();
-   return count;
 }

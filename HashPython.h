@@ -20,6 +20,8 @@ class HashPython
       bool findWord(const SElement &);
       void printHashTable() const;
       void clearCounts();
+      void ingest();
+
 };
 
 #endif
