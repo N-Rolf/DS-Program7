@@ -1,15 +1,15 @@
 # target            - output - highest priority
-# prerequisites     - monitor changes to main.o Stack.o
+# prerequisites     - monitor changes to HashTest.o Stack.o
 # command           - link object files (.o files)
 #                   - generate executable named output
-output: main.o HashPython.o
-	g++ -o output main.o HashPython.o
+output: HashTest.o HashPython.o
+	g++ -o output HashTest.o HashPython.o
 
-# target            - main.o
-# prerequisites     - monitor changes to main.cpp
-# command           - generate main.o
-main.o: main.cpp
-	g++ -c main.cpp
+# target            - HashTest.o
+# prerequisites     - monitor changes to HashTest.cpp
+# command           - generate HashTest.o
+HashTest.o: HashTest.cpp
+	g++ -c HashTest.cpp
 
 # target            - Stack.o
 # prerequisites     - monitor changes to Stack.cpp, Stack.h
@@ -22,4 +22,4 @@ BST.o: HashPython.h HashPython.cpp
 # command           - remove .o files and executable
 # command line      - make clean
 clean:
-	rm output main.o HashPython.o
+	rm output HashTest.o HashPython.o
