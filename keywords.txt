@@ -6,7 +6,8 @@ class
 continue
 def
 del
-elif
+else if
+411
 else
 except
 finally

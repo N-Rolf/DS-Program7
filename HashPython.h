@@ -1,5 +1,14 @@
-#ifndef BST_H
-#define BST_H
+/********************************************************************
+***  NAME       :Neil Rolf                                        ***
+***  CLASS      :CSc 300                                          ***
+***  ASSIGNMENT :Program 7                                        ***
+***  DUE DATE   :04/01/2022                                       ***
+***  INSTRUCTOR :Kurtenbach                                       ***
+*********************************************************************
+***  DESCRIPTION : header file for HashPython class               ***
+********************************************************************/
+#ifndef HashPython_H
+#define HashPython_H
 #include <string>
 typedef std::string SElement;
 
@@ -13,14 +22,18 @@ class HashPython
          unsigned count;
       };
       TableElem hashTable[TABLE_SIZE];
-      //prototypes for private member functions go here
-   
+      SElement userFile;
+      int getHashKey(SElement);
+      void ingest();
+
    public:
-      HashPython();  //constructor
+      HashPython();
+      HashPython(SElement);
       bool findWord(const SElement &);
       void printHashTable() const;
       void clearCounts();
-      void ingest(SElement);
+
+
 
 };
 
